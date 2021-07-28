@@ -48,7 +48,7 @@ seq2seq 와 형태는 비슷하나 N개의 인코더와 디코더의 갯수를 �
 
 * 인코더의 Self-Attention                : Query = Key = Value
 * 디코더의 Masked Decoder Self-Attention : Query = Key = Value
-* 디코더의 Encoder-Decoder Attention   : Query ( 디코더 벡터 ) / Key = Value ( 인코더 벡터 )
+* 디코더의 Encoder-Decoder Attention     : Query ( 디코더 벡터 ) / Key = Value ( 인코더 벡터 )
 
 ### 멀티 헤드 어텐션
 
@@ -67,6 +67,15 @@ seq2seq 와 형태는 비슷하나 N개의 인코더와 디코더의 갯수를 �
 
 #### 셀프 어텐션
 
+인코더의 멀티 헤드 셀프 어텐션과 같은 연산과정을 거치나 어텐션 스코어에서 마스킹을 적용
+
 #### 룩어헤드 마스크 ( Look Ahead Mask )
 
+현재 시점보다 미래에 있는 단어들을 참고하지 못하도록 하는 작업
+
 ### 2. 인코더-디코더 어텐션
+
+Query ( 디코더 벡터 ) / Key = Value ( 인코더 벡터 )
+
+Query 는 Decoder 1번째 층에서 얻고 Key, Value 는 Encoder 에서 전달받음
+
